@@ -328,6 +328,76 @@ pub fn golden(seed: u64, max_steps: usize) -> Value {
     })
 }
 
+/// Diagnostic trace: every f64 in a step's commands as exact bits (same semantic point on every
+/// platform: right before the step runs). No-op unless `SOLIDCRAFT_TRACE_BOOLEANS=1`.
+fn trace_params(step: &Step) {
+    if !solidcraft_kernel::diag_trace::enabled() {
+        return;
+    }
+    for (cmd, params) in &step.commands {
+        let mut out: Vec<f64> = Vec::new();
+        collect_numbers(params, &mut out);
+        for (i, v) in out.iter().enumerate() {
+            solidcraft_kernel::diag_trace::emit_fields("step_param", cmd, &[("i", i as f64), ("v", *v)], (0, 0, 0));
+        }
+    }
+}
+
+fn collect_numbers(v: &Value, out: &mut Vec<f64>) {
+    match v {
+        Value::Number(n) => {
+            if let Some(x) = n.as_f64() {
+                out.push(x);
+            }
+        }
+        Value::Array(a) => {
+            for x in a {
+                collect_numbers(x, out);
+            }
+        }
+        Value::Object(o) => {
+            for (_, x) in o {
+                collect_numbers(x, out);
+            }
+        }
+        _ => {}
+    }
+}
+
+/// Diagnostic trace: the bodies' measured totals after a step, summed exactly as `golden` sums
+/// them. No-op unless `SOLIDCRAFT_TRACE_BOOLEANS=1`; measuring is side-effect free.
+fn trace_step(s: &Session, kind: &str, step_index: usize) {
+    if !solidcraft_kernel::diag_trace::enabled() {
+        return;
+    }
+    let st = s.model.state();
+    let (mut volume, mut area, mut faces, mut edges, mut shells) = (0.0, 0.0, 0usize, 0usize, 0usize);
+    for (i, b) in st.bodies.iter().enumerate() {
+        match solidcraft_kernel::measure(&b.body) {
+            Ok(m) => {
+                volume += m.volume;
+                area += m.area;
+                faces += m.faces;
+                edges += m.edges;
+                shells += m.shells;
+                solidcraft_kernel::diag_trace::emit_fields(
+                    "body_summary",
+                    "",
+                    &[("body", i as f64), ("volume", m.volume), ("area", m.area)],
+                    (m.faces, m.edges, m.vertices),
+                );
+            }
+            Err(_) => solidcraft_kernel::diag_trace::emit_fields("body_summary", "unmeasured", &[("body", i as f64)], (0, 0, 0)),
+        }
+    }
+    solidcraft_kernel::diag_trace::emit_fields(
+        "step_summary",
+        kind,
+        &[("step", step_index as f64), ("volume_total", volume), ("area_total", area), ("shells", shells as f64)],
+        (faces, edges, 0),
+    );
+}
+
 /// [`run_with`], and the session the run left.
 fn run_session(seed: u64, max_steps: usize, on_step: &mut dyn FnMut(&Step)) -> (Run, Session) {
     let mut r = Rng::new(seed);
@@ -350,6 +420,7 @@ fn run_session(seed: u64, max_steps: usize, on_step: &mut dyn FnMut(&Step)) -> (
         let Some(st) = st else { continue };
         let before = s.doc.features.len();
         solidcraft_kernel::diag_trace::set_context(seed, run.steps.len(), &st.kind);
+        trace_params(&st);
         on_step(&st);
         let out = apply(&mut s, &st);
         if out.kind == "rejected" || out.kind == "unsupported" {
@@ -373,6 +444,7 @@ fn run_session(seed: u64, max_steps: usize, on_step: &mut dyn FnMut(&Step)) -> (
             }
         }
         run.steps.push(st);
+        trace_step(&s, kind, run.steps.len());
         if out.kind != "ok" {
             run.outcome = out;
             return (run, s);

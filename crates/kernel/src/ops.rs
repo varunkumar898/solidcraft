@@ -570,14 +570,23 @@ pub fn boolean(a: &Body, b: &Body, op: BoolOp) -> Result<Option<Body>> {
 fn boolean_untimed(a: &Body, b: &Body, op: BoolOp) -> Result<Option<Body>> {
     // Earlier coarse bores can leave a junction a later pattern copy cannot intersect.
     // Resolve conical-cut junctions from the first copy, while the operands are unchanged.
-    if op == BoolOp::Cut && !APART.with(|c| c.get()) && conical_cut_junction(a, b) {
-        let refined = |a: &Body, b: &Body, op| boolean_whole_with_refinement(a, b, op, true);
-        if let Ok(result) = boolean_via(a, b, op, &refined) {
-            return Ok(result);
+    if op == BoolOp::Cut && !APART.with(|c| c.get()) {
+        let conical = conical_cut_junction(a, b);
+        crate::diag_trace::emit_fields("bool_route", "conical_cut_junction", &[("hit", if conical { 1.0 } else { 0.0 })], (0, 0, 0));
+        if conical {
+            let refined = |a: &Body, b: &Body, op| boolean_whole_with_refinement(a, b, op, true);
+            if let Ok(result) = boolean_via(a, b, op, &refined) {
+                return Ok(result);
+            }
         }
     }
     let r = boolean_via(a, b, op, &boolean_whole);
-    if r.is_ok() || !crate::tangent_cylinders::needed(a, b) {
+    if r.is_ok() {
+        return r;
+    }
+    let needed = crate::tangent_cylinders::needed(a, b);
+    crate::diag_trace::emit_fields("bool_route", "tangent_cylinders", &[("needed", if needed { 1.0 } else { 0.0 })], (0, 0, 0));
+    if !needed {
         return r;
     }
     // Equal cylinders crossing each other touch at two points the boolean cannot take in the
@@ -868,6 +877,12 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
     // floor) is otherwise spanned by triangles cutting through it, which reads as missing
     // material.
     let mut tol_m = (size * 5e-4).min(meeting_size(a, b) * 2e-3).max(size * 1e-5);
+    crate::diag_trace::emit_fields(
+        "whole_entry",
+        "",
+        &[("size", size), ("tol_m", tol_m), ("va", volume(a)), ("vb", volume(b)), ("b_faces", b.face_count() as f64), ("b_edges", b.edge_count() as f64)],
+        (a.face_count(), a.edge_count(), a.vertex_count()),
+    );
     // A prism pair (a plate and the tool through it) is decided exactly in 2D, with no mesh of
     // either operand. The sampled shortcuts below need a refined mesh of both, and that mesh is
     // most of what a boolean costs: a pattern or a multi-profile sketch rebuilds the whole
@@ -877,6 +892,7 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
     // unchanged.
     let early_prism = matches!(op, BoolOp::Cut | BoolOp::Intersect);
     let prism = early_prism.then(|| prism_result(a, b, op, size, &counts, crate::prism::prism_boolean)).flatten();
+    crate::diag_trace::emit_fields("whole_route", "prism_early", &[("given", if prism.is_some() { 1.0 } else { 0.0 })], (0, 0, 0));
     if let Some(Ok(Some(body))) = &prism {
         let (va0, vb0) = (volume(a), volume(b));
         let (v0, slack0) = (volume(body), 2e-3 * (va0 + vb0) + 1e-9);
@@ -888,8 +904,10 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
         // engraving of thin strokes from no change), and they take the path below, which
         // decides them, and the identity they keep, exactly as it always has.
         if plausible(v0, op, va0, vb0, slack0) {
+            crate::diag_trace::emit_fields("whole_route", "prism_early_used", &[("v0", v0), ("slack0", slack0)], (body.face_count(), body.edge_count(), 0));
             return Ok(Some(body.clone()));
         }
+        crate::diag_trace::emit_fields("whole_route", "prism_early_declined", &[("v0", v0), ("slack0", slack0)], (body.face_count(), body.edge_count(), 0));
     }
     let mut meshes = (a.tessellate_with(tol_m, true).ok(), b.tessellate_with(tol_m, true).ok());
     // The vertex boxes above miss a curved operand's reach (a cylinder has only seam vertices),
@@ -897,15 +915,17 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
     // faceted at 0.017 mm and a correct result failed the membership test. The meshes just made
     // do span the bodies, so the step is set again from where they meet and the meshes are
     // remade once, when that is a much finer step.
+    let mut meet = f64::NAN;
     let refined = match &meshes {
         // A meeting box only a few steps thick is the tessellation error of bodies that merely
         // touch or miss each other: a finer mesh there cannot help and only slows the operation.
         (Some(ma), Some(mb)) => {
-            let meet = mesh_meeting_size(ma, mb);
+            meet = mesh_meeting_size(ma, mb);
             (meet > tol_m * 8.0).then(|| (size * 5e-4).min(meet * 2e-3).max(size * 1e-5))
         }
         _ => None,
     };
+    let mut refined_used = false;
     if let Some(refined) = refined
         && refined < tol_m * 0.5
     {
@@ -913,8 +933,19 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
         if again.0.is_some() && again.1.is_some() {
             tol_m = refined;
             meshes = again;
+            refined_used = true;
         }
     }
+    let (ma_tris, mb_tris) = match &meshes {
+        (Some(ma), Some(mb)) => (ma.triangles.len() as f64, mb.triangles.len() as f64),
+        _ => (f64::NAN, f64::NAN),
+    };
+    crate::diag_trace::emit_fields(
+        "whole_meshes",
+        if refined_used { "refined" } else { "coarse" },
+        &[("ma_tris", ma_tris), ("mb_tris", mb_tris), ("meet", meet), ("tol_m", tol_m), ("refined", refined.unwrap_or(f64::NAN))],
+        (0, 0, 0),
+    );
     let (va, vb) = match &meshes {
         (Some(ma), Some(mb)) => (ma.measure().volume, mb.measure().volume),
         _ => (volume(a), volume(b)),
@@ -936,18 +967,31 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
             && crate::coplanar::faces_touch(a, b)
     };
     let check = |r: &Body| -> (bool, f64) {
-        let Ok(mr) = r.tessellate_with(tol_m, true) else { return (false, f64::NAN) };
+        let Ok(mr) = r.tessellate_with(tol_m, true) else {
+            crate::diag_trace::emit_fields("check", "no_mesh", &[], (r.face_count(), r.edge_count(), 0));
+            return (false, f64::NAN);
+        };
         let v = mr.measure().volume;
         let bounds = plausible(v, op, va, vb, slack);
         if !bounds {
+            crate::diag_trace::emit_fields("check", "bounds", &[("v", v), ("va", va), ("vb", vb), ("slack", slack)], (r.face_count(), r.edge_count(), 0));
             return (false, v);
         }
         if unfused(r) {
+            crate::diag_trace::emit_fields("check", "unfused", &[("v", v)], (r.face_count(), r.edge_count(), 0));
             return (false, v);
         }
         let consistent = match &meshes {
-            (Some(ma), Some(mb)) => mismatch(ma, mb, &mr, op).is_none_or(|f| f < 0.004),
-            _ => true,
+            (Some(ma), Some(mb)) => {
+                let frac = mismatch(ma, mb, &mr, op);
+                let ok = frac.is_none_or(|f| f < 0.004);
+                crate::diag_trace::emit_fields("check", if ok { "ok" } else { "mismatch" }, &[("v", v), ("frac", frac.unwrap_or(f64::NAN))], (r.face_count(), r.edge_count(), 0));
+                ok
+            }
+            _ => {
+                crate::diag_trace::emit_fields("check", "ok_no_meshes", &[("v", v)], (r.face_count(), r.edge_count(), 0));
+                true
+            }
         };
         (consistent, v)
     };
@@ -978,8 +1022,10 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
         && let Some((r, sure)) = trivial(a, b, op, ma, mb, &counts, 3.0 * tol_m)
     {
         if sure {
+            crate::diag_trace::emit_fields("whole_route", "trivial_sure", &[], (0, 0, 0));
             return Ok(r);
         }
+        crate::diag_trace::emit_fields("whole_route", "trivial_doubted", &[], (0, 0, 0));
         doubted = Some(r);
     }
     let mut last = String::new();
@@ -988,6 +1034,7 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
     // are checked). For a cut or an intersection this already ran above; the other operations
     // ask here, after the sampled shortcut, which is where that shortcut is cheapest.
     let prism = prism.or_else(|| (!early_prism).then(|| prism_result(a, b, op, size, &counts, crate::prism::prism_boolean)).flatten());
+    crate::diag_trace::emit_fields("whole_route", "prism_late", &[("given", if prism.is_some() { 1.0 } else { 0.0 })], (0, 0, 0));
     if let Some(result) = prism {
         match result {
             Ok(Some(body)) => {
@@ -998,8 +1045,10 @@ fn boolean_whole_with_refinement(a: &Body, b: &Body, op: BoolOp, refine: bool) -
                     _ => volume(&body),
                 };
                 if plausible(v, op, va, vb, slack) {
+                    crate::diag_trace::emit_fields("whole_route", "prism_late_used", &[("v", v), ("slack", slack)], (body.face_count(), body.edge_count(), 0));
                     return Ok(Some(body));
                 }
+                crate::diag_trace::emit_fields("whole_route", "prism_late_declined", &[("v", v), ("slack", slack)], (body.face_count(), body.edge_count(), 0));
             }
             Ok(None) => return Ok(None),
             // A failed prism attempt keeps trying the other strategies, as it did before.
@@ -1491,7 +1540,20 @@ pub(crate) fn nudged(r: Body, nb: &Body, counts: &[(usize, usize)]) -> Body {
 /// copies) keep the operands' face and edge order, and so does moving the result back, so the
 /// history truck records holds for the operands themselves.
 pub(crate) fn truck_boolean(a: &Body, b: &Body, op: BoolOp, shift: Option<mt::Vector3>, tol: f64) -> Result<(Solid, Option<recorded::Shapeops>)> {
-    guard("boolean", || {
+    let traced = crate::diag_trace::enabled();
+    if traced {
+        crate::diag_trace::emit_fields(
+            "truck_call",
+            match op {
+                BoolOp::Cut => "cut",
+                BoolOp::Union => "union",
+                BoolOp::Intersect => "intersect",
+            },
+            &[("tol", tol), ("shift", if shift.is_some() { 1.0 } else { 0.0 }), ("a_faces", a.face_count() as f64), ("b_faces", b.face_count() as f64)],
+            (0, 0, 0),
+        );
+    }
+    let r = guard("boolean", || {
         let (mut sa, mut sb) = (a.deep_copy(), b.deep_copy());
         if let Some(shift) = shift {
             sa = mt::builder::translated(&sa, shift);
@@ -1509,7 +1571,18 @@ pub(crate) fn truck_boolean(a: &Body, b: &Body, op: BoolOp, shift: Option<mt::Ve
         let (s, h) = res.ok_or_else(|| KernelError::Failed("no result".into()))?;
         let h = h.and_then(|h| recorded::shapeops(&h, &sb, tool_edges.as_ref()));
         Ok((if let Some(shift) = shift { mt::builder::translated(&s, -shift) } else { s }, h))
-    })
+    });
+    if traced {
+        match &r {
+            Ok((s, _)) => {
+                let faces = s.face_iter().count();
+                let edges: std::collections::HashSet<mt::EdgeID> = s.boundaries().iter().flat_map(|sh| sh.edge_iter()).map(|e| e.id()).collect();
+                crate::diag_trace::emit_fields("truck_out", "ok", &[("solid_faces", faces as f64), ("solid_edges", edges.len() as f64)], (0, 0, 0));
+            }
+            Err(_) => crate::diag_trace::emit_fields("truck_out", "err", &[], (0, 0, 0)),
+        }
+    }
+    r
 }
 
 /// A boolean of `a` and `b` given as their pieces (`la`, `lb`); the result's pieces in one body.

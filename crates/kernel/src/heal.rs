@@ -1,7 +1,7 @@
 //! Clean-up after operations: coplanar neighbouring faces become one face, and two straight
 //! edges meeting in line at a vertex nothing else uses become one edge (as Fusion keeps them).
 
-use std::collections::{BTreeSet, HashMap};
+use std::collections::{BTreeSet, HashMap, HashSet};
 
 use solidcraft_geom::Vec3;
 use truck_modeling::{self as mt, builder};
@@ -40,6 +40,13 @@ pub(crate) fn find(p: &mut [usize], mut i: usize) -> usize {
         i = q;
     }
     i
+}
+
+/// Distinct faces and edges of a shell, for the diagnostic trace.
+fn shell_size(sh: &mt::Shell) -> (usize, usize) {
+    let faces = sh.face_iter().count();
+    let edges: HashSet<mt::EdgeID> = sh.edge_iter().map(|e| e.id()).collect();
+    (faces, edges.len())
 }
 
 /// Points along an oriented edge (for loop areas and containment).
@@ -112,23 +119,55 @@ fn merge_coplanar(shell: &mt::Shell, tol: f64, keep: &[Vec<Vec3>]) -> Option<(mt
     }
     let mut merged_any = false;
     let edges: HashMap<mt::EdgeID, mt::Edge> = shell.edge_iter().map(|e| (e.id(), e)).collect();
+    // Trace decisions are collected and sorted before they are written: the edge map above is
+    // met in (random) hash order, which #707 keeps out of the result and which must stay out
+    // of the trace too.
+    let tracing = crate::diag_trace::enabled();
+    let mut pairs: Vec<(usize, usize, f64, f64, bool, bool)> = Vec::new();
     for (id, fs) in &by_edge {
         if let [a, b] = fs[..]
             && a != b
-            && (keep.is_empty() || !edges.get(id).is_some_and(|e| on_split_line(&edge_points(e), keep)))
-            && let (Some(Some((na, da))), Some(Some((nb, db)))) = (planes.get(a), planes.get(b))
-            && na.dot(*nb) > 1.0 - 1e-9
-            && (da - db).abs() < tol
         {
-            // The lesser root wins, so each group's root is its first face whatever order the
-            // edges (in hash order of their addresses) are met in (#707).
-            let (ra, rb) = (find(&mut parent, a), find(&mut parent, b));
-            if ra != rb {
-                if let Some(x) = parent.get_mut(ra.max(rb)) {
-                    *x = ra.min(rb);
+            let pass_keep = keep.is_empty() || !edges.get(id).is_some_and(|e| on_split_line(&edge_points(e), keep));
+            let pass_planes = match (planes.get(a), planes.get(b)) {
+                (Some(Some((na, da))), Some(Some((nb, db)))) => {
+                    let dot = na.dot(*nb);
+                    let sep = (*da - *db).abs();
+                    if tracing {
+                        let merged = pass_keep && dot > 1.0 - 1e-9 && sep < tol;
+                        pairs.push((a, b, dot, sep, pass_keep, merged));
+                    }
+                    pass_keep && dot > 1.0 - 1e-9 && sep < tol
                 }
-                merged_any = true;
+                _ => {
+                    if tracing {
+                        pairs.push((a, b, f64::NAN, f64::NAN, pass_keep, false));
+                    }
+                    false
+                }
+            };
+            if pass_planes {
+                // The lesser root wins, so each group's root is its first face whatever order the
+                // edges (in hash order of their addresses) are met in (#707).
+                let (ra, rb) = (find(&mut parent, a), find(&mut parent, b));
+                if ra != rb {
+                    if let Some(x) = parent.get_mut(ra.max(rb)) {
+                        *x = ra.min(rb);
+                    }
+                    merged_any = true;
+                }
             }
+        }
+    }
+    if tracing {
+        pairs.sort_by(|u, v| (u.0, u.1).cmp(&(v.0, v.1)));
+        for (a, b, dot, sep, keep_ok, merged) in &pairs {
+            crate::diag_trace::emit_fields(
+                "merge_pair",
+                if *merged { "merge" } else { "skip" },
+                &[("a", *a as f64), ("b", *b as f64), ("dot", *dot), ("sep", *sep), ("keep_ok", if *keep_ok { 1.0 } else { 0.0 })],
+                (0, 0, 0),
+            );
         }
     }
     if !merged_any {
@@ -223,6 +262,8 @@ fn merge_collinear(shell: &mt::Shell, trace: &mut Trace) -> Option<mt::Shell> {
     // Edges that continue each other in line through a vertex nothing else uses.
     let mut parent: Vec<usize> = (0..edges.len()).collect();
     let mut any = false;
+    let tracing = crate::diag_trace::enabled();
+    let mut pairs: Vec<(usize, usize, f64, bool)> = Vec::new();
     for (v, es) in &at {
         let [ia, ib] = es[..] else { continue };
         let (Some(a), Some(b)) = (edges.get(ia), edges.get(ib)) else { continue };
@@ -233,7 +274,12 @@ fn merge_collinear(shell: &mt::Shell, trace: &mut Trace) -> Option<mt::Shell> {
         let mid = if a.front().id() == *v { a.front().clone() } else { a.back().clone() };
         let (pa, pm, pb) = (from_p3(other(a).point()), from_p3(mid.point()), from_p3(other(b).point()));
         let (Some(u), Some(w)) = ((pm - pa).normalized(), (pb - pm).normalized()) else { continue };
-        if u.dot(w) > 1.0 - 1e-10 {
+        let dot = u.dot(w);
+        let joined = dot > 1.0 - 1e-10;
+        if tracing {
+            pairs.push((ia.min(ib), ia.max(ib), dot, joined));
+        }
+        if joined {
             // The lesser root wins: each run's root is its first edge whatever order the
             // vertices are met in (#707).
             let (ra, rb) = (find(&mut parent, ia), find(&mut parent, ib));
@@ -243,6 +289,17 @@ fn merge_collinear(shell: &mt::Shell, trace: &mut Trace) -> Option<mt::Shell> {
                 *x = ra.min(rb);
                 any = true;
             }
+        }
+    }
+    if tracing {
+        pairs.sort_by(|u, v| (u.0, u.1).cmp(&(v.0, v.1)));
+        for (x, y, dot, joined) in &pairs {
+            crate::diag_trace::emit_fields(
+                "collinear_pair",
+                if *joined { "join" } else { "skip" },
+                &[("ia", *x as f64), ("ib", *y as f64), ("dot", *dot)],
+                (0, 0, 0),
+            );
         }
     }
     if !any {
@@ -352,18 +409,28 @@ fn fit_exact(e: &mt::Edge, tol: f64) -> Option<mt::Edge> {
     let pts: Vec<Vec3> = (0..=16).map(|k| from_p3(c.subs(t0 + (t1 - t0) * k as f64 / 16.0))).collect();
     let (a, b) = (from_p3(e.absolute_front().point()), from_p3(e.absolute_back().point()));
     if e.absolute_front() == e.absolute_back() || a.dist(b) < tol {
+        crate::diag_trace::emit_fields("fit_exact", "degenerate", &[("ab", a.dist(b)), ("tol", tol)], (0, 0, 0));
         return None;
     }
+    let line_resid = pts.iter().map(|p| p.dist_to_segment(a, b)).fold(0.0, f64::max);
     if pts.iter().all(|p| p.dist_to_segment(a, b) < tol) {
+        crate::diag_trace::emit_fields("fit_exact", "line", &[("line_resid", line_resid), ("ab", a.dist(b)), ("tol", tol)], (0, 0, 0));
         return Some(builder::line(e.absolute_front(), e.absolute_back()));
     }
     // A circle through the ends and the middle sample.
-    let m = *pts.get(8)?;
-    let n = (m - a).cross(b - a).normalized()?;
+    let Some(&m) = pts.get(8) else {
+        crate::diag_trace::emit_fields("fit_exact", "no_middle", &[("line_resid", line_resid), ("tol", tol)], (0, 0, 0));
+        return None;
+    };
+    let Some(n) = (m - a).cross(b - a).normalized() else {
+        crate::diag_trace::emit_fields("fit_exact", "degenerate_n", &[("line_resid", line_resid), ("tol", tol)], (0, 0, 0));
+        return None;
+    };
     let (ab, am) = (b - a, m - a);
     // Centre in the plane: solve |c-a| = |c-b| = |c-m|.
     let d = 2.0 * ab.cross(am).len2();
     if d < 1e-300 {
+        crate::diag_trace::emit_fields("fit_exact", "degenerate_d", &[("line_resid", line_resid), ("d", d), ("tol", tol)], (0, 0, 0));
         return None;
     }
     // Circumcentre: a + (|u|² v×w + |v|² w×u) / (2|w|²), u = b−a, v = m−a, w = u×v.
@@ -371,7 +438,25 @@ fn fit_exact(e: &mt::Edge, tol: f64) -> Option<mt::Edge> {
     let centre = a + (am.cross(w) * ab.len2() + w.cross(ab) * am.len2()) * (1.0 / d);
     let r = centre.dist(a);
     if pts.iter().all(|p| (p.dist(centre) - r).abs() < tol && (*p - a).dot(n).abs() < tol) {
+        let circ_r_resid = pts.iter().map(|p| (p.dist(centre) - r).abs()).fold(0.0, f64::max);
+        let circ_n_resid = pts.iter().map(|p| (*p - a).dot(n).abs()).fold(0.0, f64::max);
+        crate::diag_trace::emit_fields(
+            "fit_exact",
+            "circle",
+            &[("line_resid", line_resid), ("circ_r_resid", circ_r_resid), ("circ_n_resid", circ_n_resid), ("r", r), ("tol", tol)],
+            (0, 0, 0),
+        );
         return Some(builder::circle_arc(e.absolute_front(), e.absolute_back(), mt::Point3::new(m.x, m.y, m.z)));
+    }
+    {
+        let circ_r_resid = pts.iter().map(|p| (p.dist(centre) - r).abs()).fold(0.0, f64::max);
+        let circ_n_resid = pts.iter().map(|p| (*p - a).dot(n).abs()).fold(0.0, f64::max);
+        crate::diag_trace::emit_fields(
+            "fit_exact",
+            "none",
+            &[("line_resid", line_resid), ("circ_r_resid", circ_r_resid), ("circ_n_resid", circ_n_resid), ("r", r), ("tol", tol)],
+            (0, 0, 0),
+        );
     }
     None
 }
@@ -462,6 +547,13 @@ pub(crate) fn planar_surfaces(shell: &mt::Shell, tol: f64) -> Option<mt::Shell> 
             continue;
         };
         let o = from_p3(surf.subs(um, vm));
+        let worst = pts.iter().map(|p| (*p - o).dot(n).abs()).fold(0.0, f64::max);
+        crate::diag_trace::emit_fields(
+            "planar_face",
+            if worst > tol { "keep" } else { "plane" },
+            &[("worst", worst), ("tol", tol)],
+            (0, 0, 0),
+        );
         if pts.iter().any(|p| (*p - o).dot(n).abs() > tol) {
             faces.push(f.clone());
             continue;
@@ -607,6 +699,16 @@ impl Trace {
 
 fn heal_shells(solid: &Solid, size: f64, keep: &[Vec<Vec3>], traced: bool, faces_only: bool) -> Option<(Solid, Option<HealMap>)> {
     let tol = (size * 1e-7).max(1e-9);
+    {
+        let faces: usize = solid.boundaries().iter().map(|sh| sh.face_iter().count()).sum();
+        let edges: HashSet<mt::EdgeID> = solid.boundaries().iter().flat_map(|sh| sh.edge_iter()).map(|e| e.id()).collect();
+        crate::diag_trace::emit_fields(
+            "heal_begin",
+            if faces_only { "faces_only" } else { "full" },
+            &[("size", size), ("tol", tol)],
+            (faces, edges.len(), 0),
+        );
+    }
     let mut shells = Vec::new();
     let mut changed = false;
     let input = if traced { crate::record::edge_index(solid) } else { HashMap::new() };
@@ -621,23 +723,55 @@ fn heal_shells(solid: &Solid, size: f64, keep: &[Vec<Vec3>], traced: bool, faces
         first += count;
         // Faces come out in place, one for one, except where coplanar ones merge.
         if !faces_only && let Some(m) = planar_surfaces(&cur, (size * 1e-7).max(1e-9)) {
+            let before = shell_size(&cur);
             cur = m;
             changed = true;
+            let after = shell_size(&cur);
+            crate::diag_trace::emit_fields(
+                "heal_stage",
+                "planar_surfaces",
+                &[("faces_before", before.0 as f64), ("edges_before", before.1 as f64), ("faces_after", after.0 as f64), ("edges_after", after.1 as f64)],
+                (after.0, after.1, 0),
+            );
         }
         if !faces_only && let Some(m) = exact_edges(&cur, (size * 1e-5).max(1e-7), &mut trace) {
+            let before = shell_size(&cur);
             cur = m;
             changed = true;
+            let after = shell_size(&cur);
+            crate::diag_trace::emit_fields(
+                "heal_stage",
+                "exact_edges",
+                &[("faces_before", before.0 as f64), ("edges_before", before.1 as f64), ("faces_after", after.0 as f64), ("edges_after", after.1 as f64)],
+                (after.0, after.1, 0),
+            );
         }
         if let Some((m, groups)) = merge_coplanar(&cur, tol, keep) {
+            let before = shell_size(&cur);
             cur = m;
             from = groups.iter().map(|g| g.iter().filter_map(|i| from.get(*i)).flatten().copied().collect()).collect();
             changed = true;
+            let after = shell_size(&cur);
+            crate::diag_trace::emit_fields(
+                "heal_stage",
+                "merge_coplanar",
+                &[("faces_before", before.0 as f64), ("edges_before", before.1 as f64), ("faces_after", after.0 as f64), ("edges_after", after.1 as f64)],
+                (after.0, after.1, 0),
+            );
         }
         // Straight edges the merged pieces leave split at vertices nothing else uses join
         // into one, after any boolean (#1049): later features meet one edge, not the pieces.
         if let Some(m) = merge_collinear(&cur, &mut trace) {
+            let before = shell_size(&cur);
             cur = m;
             changed = true;
+            let after = shell_size(&cur);
+            crate::diag_trace::emit_fields(
+                "heal_stage",
+                "merge_collinear",
+                &[("faces_before", before.0 as f64), ("edges_before", before.1 as f64), ("faces_after", after.0 as f64), ("edges_after", after.1 as f64)],
+                (after.0, after.1, 0),
+            );
         }
         faces.extend(from);
         shells.push(cur);

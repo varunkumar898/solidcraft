@@ -1,13 +1,21 @@
-name: Golden trace (manual, diagnostic)
+name: Golden trace (diagnostic)
+
+# Diagnostic only: runs the robustness seeds with the boolean/measurement/heal
+# trace hook on (crates/kernel/src/diag_trace.rs; off unless
+# SOLIDCRAFT_TRACE_BOOLEANS=1) and uploads the trace files so the platforms can
+# be diffed line by line. Deliberately separate from ci.yml; delete with the
+# instrumentation.
+
 on:
   workflow_dispatch:
-    inputs:
-      seed:
-        description: "Seed to trace (13 or 67)"
-        required: true
-        default: "13"
-        type: choice
-        options: ["13", "67"]
+  push:
+    branches: [diag/golden-trace]
+    paths:
+      - "crates/kernel/**"
+      - "crates/engine/**"
+      - "crates/doc/**"
+      - "crates/sketch/**"
+      - ".github/workflows/golden-trace.yml"
 
 permissions:
   contents: read
@@ -15,7 +23,7 @@ permissions:
 jobs:
   trace:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: dtolnay/rust-toolchain@stable
@@ -23,15 +31,34 @@ jobs:
         with:
           key: golden-trace
           save-if: false
-      - name: Run traced seed
+      - name: Commit the trace runs on
+        run: git rev-parse HEAD | tee COMMIT_SHA.txt
+      - name: Trace seed 13
+        if: always()
         env:
           SOLIDCRAFT_TRACE_BOOLEANS: "1"
-          SOLIDCRAFT_TRACE_OUT: trace_x86_64_seed${{ inputs.seed }}.txt
-        run: |
-          cargo test -p solidcraft-engine --lib debug_seed_${{ inputs.seed }}_steps -- --nocapture
-      - name: Upload trace
-        uses: actions/upload-artifact@v4
+          SOLIDCRAFT_TRACE_OUT: trace_x86_64_seed13.txt
+        run: cargo test -p solidcraft-engine --lib "tests::robustness_goldens::seed_13" -- --nocapture
+      - name: Trace seed 67
+        if: always()
+        env:
+          SOLIDCRAFT_TRACE_BOOLEANS: "1"
+          SOLIDCRAFT_TRACE_OUT: trace_x86_64_seed67.txt
+        run: cargo test -p solidcraft-engine --lib "tests::robustness_goldens::seed_67" -- --nocapture
+      - name: SHA-256 of the traces
+        if: always()
+        run: sha256sum trace_x86_64_seed13.txt trace_x86_64_seed67.txt | tee trace_sha256.txt
+      - name: Upload seed 13 trace
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
         with:
-          name: trace-x86-64-seed${{ inputs.seed }}
-          path: trace_x86_64_seed${{ inputs.seed }}.txt
+          name: trace-x86-64-seed13
+          path: trace_x86_64_seed13.txt
+          retention-days: 7
+      - name: Upload seed 67 trace
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: trace-x86-64-seed67
+          path: trace_x86_64_seed67.txt
           retention-days: 7

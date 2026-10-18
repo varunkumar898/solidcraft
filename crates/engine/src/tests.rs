@@ -3698,9 +3698,9 @@ fn pattern_copies_added_after_a_rename_keep_their_numbers() {
 #[test]
 fn debug_seed_13_steps() {
     let run = crate::fuzz::run(13, 8);
-    eprintln!("TRACE_ENABLED={}", solidcraft_kernel::diag_trace::enabled());
     let mut s = Session::default();
     for (i, step) in run.steps.iter().enumerate() {
+        solidcraft_kernel::diag_trace::set_context(13, i, step.kind);
         for (c, p) in &step.commands {
             let _ = s.execute(c, p);
         }
@@ -3721,6 +3721,7 @@ fn debug_seed_67_steps() {
     let run = crate::fuzz::run(67, 8);
     let mut s = Session::default();
     for (i, step) in run.steps.iter().enumerate() {
+        solidcraft_kernel::diag_trace::set_context(67, i, step.kind);
         for (c, p) in &step.commands {
             let _ = s.execute(c, p);
         }

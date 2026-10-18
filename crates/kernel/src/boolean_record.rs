@@ -149,12 +149,25 @@ pub(crate) fn heal_build(
     counts: &[(usize, usize)],
 ) -> Result<Body> {
     let (healed, map) = crate::heal::heal_traced(solid, size, keep);
-    if !edges_evaluate(&healed) {
+    let evaluates = edges_evaluate(&healed);
+    crate::diag_trace::emit_fields(
+        "edges_evaluate",
+        if evaluates { "ok" } else { "fail" },
+        &[],
+        (
+            healed.face_iter().count(),
+            healed.boundaries().iter().flat_map(|shell| shell.edge_iter()).map(|e| e.id()).collect::<std::collections::HashSet<_>>().len(),
+            0,
+        ),
+    );
+    if !evaluates {
         return Err(crate::KernelError::Failed("an edge of the result does not evaluate".into()));
     }
     let carried = faces.zip(edges).zip(map).and_then(|((f, e), m)| m.carry(&f, &e));
     let (faces, edges) = carried.unzip();
-    record::build(healed, counts, faces, edges.as_ref())
+    let out = record::build(healed, counts, faces, edges.as_ref())?;
+    crate::diag_trace::emit_fields("heal_build_done", "", &[], (out.face_count(), out.edge_count(), out.vertex_count()));
+    Ok(out)
 }
 
 /// The body truck's result `s` makes, healed (see [`heal_build`]), with its history `h`.
