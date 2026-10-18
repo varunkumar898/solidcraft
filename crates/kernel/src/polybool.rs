@@ -63,6 +63,9 @@ fn split(pl: PlaneEq, p: &Poly, eps: f64, cf: &mut Vec<Poly>, cb: &mut Vec<Poly>
                 } else {
                     COPLANAR
                 };
+                if crate::diag_trace::enabled() && t.abs() < 2.0 * eps {
+                    crate::diag_trace::emit("split_near_boundary", t, eps, if ty == BACK { "back" } else if ty == FRONT { "front" } else { "coplanar" }, 0, 0, 0);
+                }
                 ptype |= ty;
                 ty
             })
@@ -387,7 +390,18 @@ pub fn faceted_boolean(a: &Body, b: &Mesh, op: BoolOp, tol: f64) -> Result<Optio
             BoolOp::Union => va + vb - vi,
             BoolOp::Intersect => vi,
         };
-        if (vo - expect).abs() > 1e-6 * (va.abs() + vb.abs()) || vi < -1e-9 * (va.abs() + vb.abs()) {
+        let vol_ok = !((vo - expect).abs() > 1e-6 * (va.abs() + vb.abs()) || vi < -1e-9 * (va.abs() + vb.abs()));
+        let pred = format!("faceted_boolean_tol_sweep_rel{}", rel);
+        crate::diag_trace::emit(
+            &pred,
+            (vo - expect).abs(),
+            1e-6 * (va.abs() + vb.abs()),
+            if vol_ok { "pass" } else { "fail" },
+            out.len(),
+            0,
+            0,
+        );
+        if !vol_ok {
             last = KernelError::Failed(format!("faceted boolean: inconsistent volumes ({vo} vs {expect})"));
             continue;
         }

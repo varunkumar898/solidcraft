@@ -349,6 +349,7 @@ fn run_session(seed: u64, max_steps: usize, on_step: &mut dyn FnMut(&Step)) -> (
         let st = if run.steps.is_empty() { Some(base(&mut r)) } else { next_step(&mut r, &s, &last_feature) };
         let Some(st) = st else { continue };
         let before = s.doc.features.len();
+        solidcraft_kernel::diag_trace::set_context(seed, run.steps.len(), &st.kind);
         on_step(&st);
         let out = apply(&mut s, &st);
         if out.kind == "rejected" || out.kind == "unsupported" {

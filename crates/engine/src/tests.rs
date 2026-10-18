@@ -3693,3 +3693,45 @@ fn pattern_copies_added_after_a_rename_keep_their_numbers() {
     run(&mut s, "timeline.edit", json!({"feature": "Pat", "set": {"pattern": {"count1": "2"}}}));
     assert_eq!(names(&s), ["X", "Second"]);
 }
+
+
+#[test]
+fn debug_seed_13_steps() {
+    let run = crate::fuzz::run(13, 8);
+    eprintln!("TRACE_ENABLED={}", solidcraft_kernel::diag_trace::enabled());
+    let mut s = Session::default();
+    for (i, step) in run.steps.iter().enumerate() {
+        for (c, p) in &step.commands {
+            let _ = s.execute(c, p);
+        }
+        s.refresh();
+        let st = s.model.state();
+        let (mut v, mut a, mut f, mut e, mut sh) = (0.0, 0.0, 0usize, 0usize, 0usize);
+        for b in &st.bodies {
+            if let Ok(m) = solidcraft_kernel::measure(&b.body) {
+                v += m.volume; a += m.area; f += m.faces; e += m.edges; sh += m.shells;
+            }
+        }
+        println!("SEED13 step {} {:20} bodies={} vol={:.6} area={:.6} faces={} edges={} shells={}", i, step.kind, st.bodies.len(), v, a, f, e, sh);
+    }
+}
+
+#[test]
+fn debug_seed_67_steps() {
+    let run = crate::fuzz::run(67, 8);
+    let mut s = Session::default();
+    for (i, step) in run.steps.iter().enumerate() {
+        for (c, p) in &step.commands {
+            let _ = s.execute(c, p);
+        }
+        s.refresh();
+        let st = s.model.state();
+        let (mut v, mut a, mut f, mut e, mut sh) = (0.0, 0.0, 0usize, 0usize, 0usize);
+        for b in &st.bodies {
+            if let Ok(m) = solidcraft_kernel::measure(&b.body) {
+                v += m.volume; a += m.area; f += m.faces; e += m.edges; sh += m.shells;
+            }
+        }
+        println!("SEED67 step {} {:20} bodies={} vol={:.6} area={:.6} faces={} edges={} shells={}", i, step.kind, st.bodies.len(), v, a, f, e, sh);
+    }
+}

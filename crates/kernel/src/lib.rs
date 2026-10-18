@@ -21,6 +21,7 @@ mod blend_vertex;
 mod blend_wrong_way_tests;
 mod body;
 mod boolean_diagnostics;
+pub mod diag_trace;
 mod boolean_guard;
 mod boolean_record;
 mod bore_guard;

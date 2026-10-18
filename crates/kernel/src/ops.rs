@@ -559,7 +559,12 @@ thread_local! {
 /// The result carries its exact history ([`Body::history`]) over the operands `[a, b]`,
 /// whichever way it was made, or none where a step it took does not report one.
 pub fn boolean(a: &Body, b: &Body, op: BoolOp) -> Result<Option<Body>> {
-    crate::profile::timed(crate::profile::Kind::Boolean, || boolean_untimed(a, b, op))
+    let va = crate::measure(a).map(|m| m.volume).unwrap_or(f64::NAN);
+    let r = crate::profile::timed(crate::profile::Kind::Boolean, || boolean_untimed(a, b, op));
+    let vo = r.as_ref().ok().and_then(|x| x.as_ref()).and_then(|body| crate::measure(body).ok()).map(|m| m.volume).unwrap_or(f64::NAN);
+    let branch = match &r { Ok(Some(_)) => "some", Ok(None) => "none", Err(_) => "err" };
+    crate::diag_trace::emit("boolean_result", va, vo, branch, a.face_count(), b.face_count(), 0);
+    r
 }
 
 fn boolean_untimed(a: &Body, b: &Body, op: BoolOp) -> Result<Option<Body>> {
