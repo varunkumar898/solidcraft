@@ -1,0 +1,12 @@
+seed=13 feature=1 op=cut cylinder pred=boolean_result computed=2.06163244355585857e3 (0x40a01b43cfa449f5) threshold=2.06163244355585857e3 branch=some faces=10 edges=4 verts=0
+seed=13 feature=2 op=join box pred=boolean_result computed=2.06163244355585857e3 (0x40a01b43cfa449f5) threshold=2.53033844961256227e3 branch=some faces=10 edges=6 verts=0
+seed=13 feature=3 op=rectangular pattern pred=boolean_result computed=2.53033844961256227e3 (0x40a3c4ad49448299) threshold=2.99901723643545438e3 branch=some faces=20 edges=6 verts=0
+seed=13 feature=4 op=cut cylinder pred=boolean_result computed=2.99901723643545438e3 (0x40a76e08d336cd27) threshold=2.69444762029225785e3 branch=some faces=28 edges=4 verts=0
+seed=13 feature=5 op=cut box pred=boolean_result computed=2.69444762029225785e3 (0x40a50ce52e7ca88c) threshold=2.69444762029225785e3 branch=some faces=35 edges=6 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.68899054706659308e3 (0x40a501fb28fc3055) threshold=2.41078374107832906e3 branch=some faces=36 edges=4 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.06163244355585857e3 (0x40a01b43cfa449f5) threshold=2.06163244355585857e3 branch=some faces=10 edges=4 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.06163244355585857e3 (0x40a01b43cfa449f5) threshold=2.53033844961256227e3 branch=some faces=10 edges=6 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.53033844961256227e3 (0x40a3c4ad49448299) threshold=2.99901723643545438e3 branch=some faces=20 edges=6 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.99901723643545438e3 (0x40a76e08d336cd27) threshold=2.69444762029225785e3 branch=some faces=28 edges=4 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.69444762029225785e3 (0x40a50ce52e7ca88c) threshold=2.69444762029225785e3 branch=some faces=35 edges=6 verts=0
+seed=13 feature=7 op=hole pred=boolean_result computed=2.68899054706659308e3 (0x40a501fb28fc3055) threshold=2.41078374107832906e3 branch=some faces=36 edges=4 verts=0

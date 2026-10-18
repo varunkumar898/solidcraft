@@ -1,0 +1,428 @@
+seed=67 feature=1 op=cut cylinder pred=boolean_result computed=2.47500813379539759e4 (0x40d82b8534a41b10) threshold=2.46070910260393393e4 branch=some faces=10 edges=4 verts=0
+seed=67 feature=2 op=hole pred=boolean_result computed=2.46070910260393393e4 (0x40d807c5d35ee183) threshold=2.41126744973792411e4 branch=some faces=14 edges=4 verts=0
+seed=67 feature=3 op=join cylinder pred=boolean_result computed=2.41126744973792411e4 (0x40d78c2b2af70e45) threshold=2.46648320213034604e4 branch=some faces=16 edges=4 verts=0
+seed=67 feature=4 op=join box pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.77898320213034604e4 branch=some faces=19 edges=6 verts=0
+seed=67 feature=5 op=hole pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.46648320213034604e4 branch=some faces=19 edges=4 verts=0
+seed=67 feature=5 op=hole pred=boolean_result computed=3.12500000000000182e3 (0x40a86a0000000004) threshold=2.96794645882655095e3 branch=some faces=6 edges=4 verts=0
+seed=67 feature=5 op=hole pred=boolean_result computed=2.77898320213034604e4 (0x40db23753fd647fc) threshold=2.76328725162425362e4 branch=some faces=25 edges=4 verts=0
+seed=67 feature=6 op=chamfer pred=boolean_result computed=2.96794645882655095e3 (0x40a72fe496405618) threshold=2.96638395882654959e3 branch=some faces=9 edges=5 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=6 op=chamfer pred=boolean_result computed=2.96468172806239409e3 (0x40a7295d0b75e97f) threshold=2.96316089472908561e3 branch=some faces=12 edges=5 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.46648320213034604e4 branch=some faces=19 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.96316089472908561e3 (0x40a7265260cb3f0b) threshold=2.94313018299961732e3 branch=some faces=13 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.47500813379539759e4 (0x40d82b8534a41b10) threshold=2.46070910260393393e4 branch=some faces=10 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.46070910260393393e4 (0x40d807c5d35ee183) threshold=2.41126744973792411e4 branch=some faces=14 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.41126744973792411e4 (0x40d78c2b2af70e45) threshold=2.46648320213034604e4 branch=some faces=16 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.77898320213034604e4 branch=some faces=19 edges=6 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.46648320213034604e4 branch=some faces=19 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=3.12500000000000182e3 (0x40a86a0000000004) threshold=2.96794645882655095e3 branch=some faces=6 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.77898320213034604e4 (0x40db23753fd647fc) threshold=2.76328725162425362e4 branch=some faces=25 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.96794645882655095e3 (0x40a72fe496405618) threshold=2.96638395882654959e3 branch=some faces=9 edges=5 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.10862446895043831e-15 (0xbcec000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=3.55271367880050093e-15 (0x3cf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-7.10542735760100186e-15 (0xbd00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=7.10542735760100186e-15 (0x3d00000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=0.00000000000000000e0 (0x0000000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-1.42108547152020037e-14 (0xbd10000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=split_near_boundary computed=-3.55271367880050093e-15 (0xbcf0000000000000) threshold=2.66926956300782774e-8 branch=coplanar faces=0 edges=0 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.96468172806239409e3 (0x40a7295d0b75e97f) threshold=2.96316089472908561e3 branch=some faces=12 edges=5 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.46648320213034604e4 (0x40d816353fd647fc) threshold=2.46648320213034604e4 branch=some faces=19 edges=4 verts=0
+seed=67 feature=7 op=rectangular pattern pred=boolean_result computed=2.96316089472908561e3 (0x40a7265260cb3f0b) threshold=2.94313018299961732e3 branch=some faces=13 edges=4 verts=0
